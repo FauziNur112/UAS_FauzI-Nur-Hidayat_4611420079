@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\datbuku;
-use App\Models\penulis;
+use App\Models\author;
 use App\Models\penerbit;
 
 class perpus extends Controller
@@ -23,7 +23,9 @@ class perpus extends Controller
      */
     public function create()
     {
-        return view('/menubuku/buatbuku');
+        $author = author::all();
+        $penerbit = penerbit::all();
+        return view('/menubuku/buatbuku', compact('author','penerbit'));
     }
 
     /**
@@ -34,6 +36,8 @@ class perpus extends Controller
         datbuku::create([
             'buku_id'=> $request->buku_id,
             'judul'=> $request->judul,
+            'author_id'=> $request->author_id,
+            'penerbit_id'=> $request->penerbit_id,
             'tahun_terbit'=> $request->tahun_terbit,
             'jumlah_stok'=> $request->jumlah_stok,
             'denda_buku'=> $request->denda_buku,
@@ -57,7 +61,9 @@ class perpus extends Controller
     public function edit(string $id)
     {
         $dapus = datbuku::findorfail($id);
-        return view('/menubuku/editbuku', compact('dapus'));
+        $author = author::all();
+        $penerbit = penerbit::all();
+        return view('/menubuku/editbuku', compact('dapus', 'author', 'penerbit'));
 
     }
 

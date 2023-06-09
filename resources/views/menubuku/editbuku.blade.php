@@ -19,15 +19,25 @@
             <input type="judul" name="judul" class="form-control" placeholder="Judul" value="{{ $dapus->judul }}">
           </div>
 
-          {{-- <div class="form-group mb-3">
-            <label for="penulis" class="form-label">Penulis</label>
-            <input type="penulis" name="penulis" class="form-control" value"">
+          <div class="form-group mb-3">
+            <label for="author" class="form-label">Author</label>
+            <select class="form-control select2" style="width: 100%" name="author_id" id="author_id">
+                <option disabled value> Pilih Penulis </option>
+                @foreach ($author as $item)
+                    <option value="{{ $item->id }}">{{ $item->author }}</option>
+                @endforeach
+            </select>
           </div>
 
           <div class="form-group mb-3">
-            <label for="penulis" class="form-label">Penerbit</label>
-            <input type="penulis" name="penulis" class="form-control" placeholder="Penerbit" value="">
-          </div> --}}
+            <label for="penerbit" class="form-label">Penerbit</label>
+            <select class="form-control select2" style="width: 100%" name="penerbit_id" id="penerbit_id">
+                <option disabled value> Pilih Penerbit </option>
+                @foreach ($penerbit as $item)
+                    <option value="{{ $item->id }}">{{ $item->penerbit }}</option>
+                @endforeach
+            </select>
+          </div>
 
           <div class="form-group mb-3">
             <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
