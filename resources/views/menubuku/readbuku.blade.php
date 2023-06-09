@@ -37,7 +37,7 @@ TahunTerbit
               <tr>
                 <td>{{ $item->buku_id }}</td>
                 <td>{{ $item->judul }}</td>
-                <td>{{ $item->author_id }}</td>
+                <td>{{ $item->author->author }}</td>
                 <td>{{ $item->penerbit->penerbit }}</td>
                 <td>{{ $item->tahun_terbit }}</td>
                 <td>{{ $item->jumlah_stok }}</td>

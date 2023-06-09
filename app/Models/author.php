@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class author extends Model
 {
     protected $table = "author";
-    protected $primaryKey = "id";
     protected $fillable = [
         'author',
         'id'

@@ -14,7 +14,7 @@ class perpus extends Controller
      */
     public function index(){
 
-        $dapus = datbuku::with('penerbit')->paginate(2);
+        $dapus = datbuku::with('author','penerbit')->paginate(2);
                 return view('/menubuku/readbuku', compact('dapus'));
     }
 

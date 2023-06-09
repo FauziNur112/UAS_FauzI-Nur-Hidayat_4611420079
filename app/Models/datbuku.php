@@ -21,7 +21,7 @@ class datbuku extends Model
 
     public function author()
     {
-        return $this->belongsToMany(author::class);
+        return $this->belongsTo(author::class);
     }
 
     public function penerbit()
